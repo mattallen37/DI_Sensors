@@ -202,7 +202,7 @@ class Dexter_I2C(object):
         if big_endian == None:
             big_endian = self.big_endian
         if big_endian:
-            self.transfer( [reg, ((val >> 24) & 0xFF), ((val >> 16) & 0xFF), ((val >> 8) & 0xFF), (val & 0xFF)])
+            self.transfer([reg, ((val >> 24) & 0xFF), ((val >> 16) & 0xFF), ((val >> 8) & 0xFF), (val & 0xFF)])
         else:
             self.transfer([reg, (val & 0xFF), ((val >> 8) & 0xFF), ((val >> 16) & 0xFF), ((val >> 24) & 0xFF)])
 
@@ -210,7 +210,7 @@ class Dexter_I2C(object):
         """Write a list of bytes to a register
 
         Keyword arguments:
-        reg -- regester to write to
+        reg -- register to write to
         list -- list of bytes to write"""
         arr = [reg]
         arr.extend(list)
@@ -227,7 +227,7 @@ class Dexter_I2C(object):
         """Read an 8-bit unsigned value from a register
 
         Keyword arguments:
-        reg -- regester to read from
+        reg -- register to read from
 
         Returns the value
         """
@@ -238,7 +238,7 @@ class Dexter_I2C(object):
         """Read an 8-bit signed value from a register
 
         Keyword arguments:
-        reg -- regester to read from
+        reg -- register to read from
 
         Returns the value
         """
@@ -251,7 +251,7 @@ class Dexter_I2C(object):
         """Read a 16-bit unsigned value from a register
 
         Keyword arguments:
-        reg -- regester to read from
+        reg -- register to read from
         big_endian (default None) -- True (big endian), False (little endian), or None (use the pre-defined endianness for the object)
 
         Returns the value
@@ -268,7 +268,7 @@ class Dexter_I2C(object):
         """Read a 16-bit signed value from a register
 
         Keyword arguments:
-        reg -- regester to read from
+        reg -- register to read from
         big_endian (default None) -- True (big endian), False (little endian), or None (use the pre-defined endianness for the object)
 
         Returns the value
@@ -307,7 +307,7 @@ class Dexter_I2C(object):
         """Read a list of bytes from a register
 
         Keyword arguments:
-        reg -- the regester to read from
+        reg -- the register to read from
         len -- the number of bytes to read
 
         Returns a list of the bytes read"""
