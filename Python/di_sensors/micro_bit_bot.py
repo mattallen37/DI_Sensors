@@ -88,16 +88,13 @@ class MicroBitBot():
         return name
 
     def get_version_firmware(self):
-        self.i2c_bus.write_8(self.I2C_COMMAND.GET_FIRMWARE_VERSION)
-        return self.i2c_bus.read_16()
+        return self.i2c_bus.read_16(self.I2C_COMMAND.GET_FIRMWARE_VERSION)
 
     def get_voltage_battery(self):
-        self.i2c_bus.write_8(self.I2C_COMMAND.GET_VOLTAGE_BATTERY)
-        return (self.i2c_bus.read_16() / 1000)
+        return (self.i2c_bus.read_16(self.I2C_COMMAND.GET_VOLTAGE_BATTERY) / 1000)
 
     def get_voltage_rail(self):
-        self.i2c_bus.write_8(self.I2C_COMMAND.GET_VOLTAGE_RAIL)
-        return (self.i2c_bus.read_16() / 1000)
+        return (self.i2c_bus.read_16(self.I2C_COMMAND.GET_VOLTAGE_RAIL) / 1000)
 
     def __get_sensors__(self, reg):
         array = self.i2c_bus.read_list(reg, 3)
