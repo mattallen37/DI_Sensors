@@ -54,6 +54,7 @@ class MicroBitBot():
         GET_MOTOR_STATUS_LEFT,
         SET_MOTOR_POWER,
         SET_MOTOR_POWERS,
+        GET_VOLTAGE_RAIL,
     """)
 
     MOTOR_LEFT  = 0x01
@@ -92,6 +93,10 @@ class MicroBitBot():
 
     def get_voltage_battery(self):
         self.i2c_bus.write_8(self.I2C_COMMAND.GET_VOLTAGE_BATTERY)
+        return (self.i2c_bus.read_16() / 1000)
+
+    def get_voltage_rail(self):
+        self.i2c_bus.write_8(self.I2C_COMMAND.GET_VOLTAGE_RAIL)
         return (self.i2c_bus.read_16() / 1000)
 
     def __get_sensors__(self, reg):
