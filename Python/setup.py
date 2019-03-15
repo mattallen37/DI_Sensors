@@ -50,9 +50,8 @@ setup(
         "RGB LCD",
         "DHT Sensor",
     ],
-    packages = find_packages()
-
+    packages = find_packages(),
+	install_requires = ["python-periphery"]
 )
-#    package_dir = {"grove_rgb_lcd" : "grove_rgb_lcd/", "distance_sensor" : "Distance_Sensor/Software/Python", "DHT" : "DHT_Sensor/",},
-    # packages=["grove_rgb_lcd", "distance_sensor", "DHT"]
-    #install_requires=open('requirements.txt').readlines(),
+
+#install_requires=open('requirements.txt').readlines(),
